@@ -1,4 +1,4 @@
-# ep3compmus
+# EP3CompMus
 EP3 de Computação Musical
 
 # Referências
