@@ -4,6 +4,7 @@ EP3 de Computação Musical
 # Referências
 ## 3.1 - Gerador de VCO
 http://drymonitis.me/wp-content/uploads/2016/02/making_VCOs_in_pure_data.pdf
+
 http://write.flossmanuals.net/pure-data/generating-waveforms/
 
 ## 3.4 -  Síntese Aditiva por fórmulas fechadas
