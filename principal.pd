@@ -1,0 +1,3 @@
+#N canvas 325 22 765 582 10;
+#X obj 193 114 LeitorArquivo;
+#X obj 202 339 EntradaMidi;
