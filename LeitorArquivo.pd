@@ -1,9 +1,7 @@
-#N canvas 16 40 734 651 10;
-#X obj 135 5 bng 15 250 50 0 empty empty Escolher_Arquivo 17 7 0 10
+#N canvas 16 40 744 658 10;
+#X obj 135 89 bng 15 250 50 0 empty empty Escolher_Arquivo 17 7 0 10
 -203904 -1 -1;
-#X floatatom 277 430 5 0 0 0 - - -, f 5;
 #X obj 277 404 mtof;
-#X obj 277 456 osc~;
 #X obj 278 267 unpack;
 #X obj 277 342 stripnote;
 #X floatatom 277 377 5 0 0 0 - - -, f 5;
@@ -13,74 +11,67 @@
 #X msg 305 124 read \$1;
 #X obj 278 96 t b s;
 #X obj 278 157 cyclone/seq;
-#X obj 277 568 dac~;
 #X msg 352 203 0;
 #X text 371 182 Final do sequenciamento.;
 #X obj 278 237 cyclone/midiparse;
-#X obj 277 533 *~;
 #X text 317 376 Número MIDI;
-#X text 318 428 Hertz;
 #X floatatom 278 289 5 0 0 0 - - -, f 5;
 #X floatatom 357 272 5 0 0 0 - - -, f 5;
 #X text 235 288 pitch;
 #X text 398 272 velocity;
 #X msg 422 125 stop;
-#X obj 383 553 pack;
-#X obj 389 319 select 0;
-#X obj 427 351 outlet;
-#X obj 383 577 outlet;
+#X obj 277 488 pack;
+#X obj 378 301 select 0;
+#X obj 444 414 outlet;
+#X obj 277 512 outlet;
 #X obj 431 89 r \$0-stopbang;
-#X obj 138 100 bng 15 250 50 0 \$0-stopbang empty Parar 17 7 0 10 -258113
+#X obj 135 115 bng 15 250 50 0 \$0-stopbang empty Parar 17 7 0 10 -258113
 -1 -1;
-#X floatatom 213 66 5 0 0 0 amplitude #0-ampl -, f 5;
-#X floatatom 74 65 5 0 0 0 frequência #0-freq -, f 5;
-#X obj 184 451 s \$0-freq;
-#X obj 9 38 hsl 128 15 0 1 0 0 \$0-ampl empty Volume -2 -8 0 10 -262144
--1 -1 0 1;
-#X obj 292 510 r \$0-ampl;
-#X obj 404 531 r \$0-ampl;
+#X floatatom 74 116 5 0 0 0 Amplitude #0-ampl -, f 5;
+#X floatatom 74 90 5 0 0 0 Frequência #0-freq -, f 5;
+#X obj 197 442 s \$0-freq;
+#X obj 298 466 r \$0-ampl;
 #X obj 409 229 s \$0-freq;
 #X text 475 228 Deixa a frequência em 0 quando para.;
-#X text 151 533 Tirar isso depois \, não é esse patch que tem que
-tocar o som., f 19;
-#X text 258 4 < Clicando nesse bang se escolhe um arquivo MIDI para
-ser lido., f 64;
-#X text 428 577 <-- Saída da esquerda:;
-#X text 428 596 Retorna a dupla (frequência \, amplitude);
-#X text 476 348 <-- Saída da direita:, f 38;
-#X text 476 367 Manda um bang quando a velocidade é 0 \, o que sinaliza
+#X text 322 512 <-- Saída da esquerda:;
+#X text 322 531 Retorna a dupla (frequência \, amplitude);
+#X text 490 411 <-- Saída da direita:, f 38;
+#X text 490 430 Manda um bang quando a velocidade é 0 \, o que sinaliza
 que a nota acabou., f 38;
-#X text 136 125 ^ Esse bang faz a leitura parar., f 16;
-#X connect 0 0 8 0;
-#X connect 1 0 3 0;
-#X connect 2 0 1 0;
-#X connect 2 0 24 0;
-#X connect 2 0 32 0;
-#X connect 3 0 16 0;
-#X connect 4 0 19 0;
-#X connect 4 1 20 0;
-#X connect 5 0 6 0;
-#X connect 6 0 2 0;
-#X connect 7 0 13 0;
-#X connect 8 0 10 0;
-#X connect 9 0 11 0;
-#X connect 10 0 11 0;
-#X connect 10 1 9 0;
-#X connect 11 0 15 0;
-#X connect 11 1 7 0;
-#X connect 13 0 3 0;
-#X connect 13 0 36 0;
-#X connect 15 0 4 0;
-#X connect 16 0 12 0;
-#X connect 16 0 12 1;
-#X connect 19 0 5 0;
-#X connect 20 0 25 0;
-#X connect 20 0 5 1;
-#X connect 23 0 11 0;
-#X connect 23 0 7 0;
-#X connect 24 0 27 0;
-#X connect 25 0 26 0;
-#X connect 28 0 23 0;
-#X connect 34 0 16 1;
-#X connect 35 0 24 1;
-#X coords 0 -1 1 1 250 120 1 0 0;
+#X text 3 144 Saída:(f \, a), f 6;
+#X text 208 143 Saída: bang, f 6;
+#X obj 18 20 cnv 15 220 50 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 19 23 Lê um arquivo MIDI e devolve duplas (frequência \,
+amplitude) na esquerda e bangs (fim de notas) na direitas., f 36;
+#X text 514 324 Amplitude;
+#X obj 423 344 s \$0-ampl;
+#X obj 423 322 expr $f1 / 127;
+#X connect 0 0 6 0;
+#X connect 1 0 19 0;
+#X connect 1 0 27 0;
+#X connect 2 0 14 0;
+#X connect 2 1 15 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 5 0 10 0;
+#X connect 6 0 8 0;
+#X connect 7 0 9 0;
+#X connect 8 0 9 0;
+#X connect 8 1 7 0;
+#X connect 9 0 12 0;
+#X connect 9 1 5 0;
+#X connect 10 0 29 0;
+#X connect 12 0 2 0;
+#X connect 14 0 3 0;
+#X connect 15 0 20 0;
+#X connect 15 0 3 1;
+#X connect 18 0 9 0;
+#X connect 18 0 5 0;
+#X connect 19 0 22 0;
+#X connect 20 0 21 0;
+#X connect 20 1 41 0;
+#X connect 23 0 18 0;
+#X connect 28 0 19 1;
+#X connect 41 0 40 0;
+#X coords 0 -1 1 1 250 175 1 0 0;
