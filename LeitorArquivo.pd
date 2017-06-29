@@ -1,52 +1,53 @@
-#N canvas 16 40 744 658 10;
-#X obj 135 89 bng 15 250 50 0 empty empty Escolher_Arquivo 17 7 0 10
+#N canvas 16 40 569 646 10;
+#X obj 134 14 bng 15 250 50 0 empty empty Escolher_Arquivo 17 7 0 10
 -203904 -1 -1;
-#X obj 277 404 mtof;
-#X obj 278 267 unpack;
-#X obj 277 342 stripnote;
-#X floatatom 277 377 5 0 0 0 - - -, f 5;
-#X obj 352 183 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 81 453 mtof;
+#X obj 82 316 unpack;
+#X obj 81 391 stripnote;
+#X floatatom 81 426 5 0 0 0 - - -, f 5;
+#X obj 156 232 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 278 70 openpanel;
-#X msg 305 124 read \$1;
-#X obj 278 96 t b s;
-#X obj 278 157 cyclone/seq;
-#X msg 352 203 0;
-#X text 371 182 Final do sequenciamento.;
-#X obj 278 237 cyclone/midiparse;
-#X text 317 376 Número MIDI;
-#X floatatom 278 289 5 0 0 0 - - -, f 5;
-#X floatatom 357 272 5 0 0 0 - - -, f 5;
-#X text 235 288 pitch;
-#X text 398 272 velocity;
-#X msg 422 125 stop;
-#X obj 277 488 pack;
-#X obj 378 301 select 0;
-#X obj 444 414 outlet;
-#X obj 277 512 outlet;
-#X obj 431 89 r \$0-stopbang;
-#X obj 135 115 bng 15 250 50 0 \$0-stopbang empty Parar 17 7 0 10 -258113
+#X obj 82 119 openpanel;
+#X msg 109 173 read \$1;
+#X obj 82 145 t b s;
+#X obj 82 206 cyclone/seq;
+#X msg 156 252 0;
+#X text 175 231 Final do sequenciamento.;
+#X obj 82 286 cyclone/midiparse;
+#X text 121 425 Número MIDI;
+#X floatatom 82 338 5 0 0 0 - - -, f 5;
+#X floatatom 161 321 5 0 0 0 - - -, f 5;
+#X text 39 337 pitch;
+#X text 202 321 velocity;
+#X msg 226 174 stop;
+#X obj 81 537 pack;
+#X obj 182 350 select 0;
+#X obj 248 463 outlet;
+#X obj 81 561 outlet;
+#X obj 235 138 r \$0-stopbang;
+#X obj 134 40 bng 15 250 50 0 \$0-stopbang empty Parar 17 7 0 10 -258113
 -1 -1;
-#X floatatom 74 116 5 0 0 0 Amplitude #0-ampl -, f 5;
-#X floatatom 74 90 5 0 0 0 Frequência #0-freq -, f 5;
-#X obj 197 442 s \$0-freq;
-#X obj 298 466 r \$0-ampl;
-#X obj 409 229 s \$0-freq;
-#X text 475 228 Deixa a frequência em 0 quando para.;
-#X text 322 512 <-- Saída da esquerda:;
-#X text 322 531 Retorna a dupla (frequência \, amplitude);
-#X text 490 411 <-- Saída da direita:, f 38;
-#X text 490 430 Manda um bang quando a velocidade é 0 \, o que sinaliza
+#X floatatom 73 41 5 0 0 0 Amplitude #0-ampl -, f 5;
+#X floatatom 73 15 5 0 0 0 Frequência #0-freq -, f 5;
+#X obj 14 489 s \$0-freq;
+#X obj 102 515 r \$0-ampl;
+#X obj 213 278 s \$0-freq;
+#X text 279 277 Deixa a frequência em 0 quando para.;
+#X text 126 561 <-- Saída da esquerda:;
+#X text 126 580 Retorna a dupla (frequência \, amplitude);
+#X text 294 460 <-- Saída da direita:, f 38;
+#X text 294 479 Manda um bang quando a velocidade é 0 \, o que sinaliza
 que a nota acabou., f 38;
-#X text 3 144 Saída:(f \, a), f 6;
-#X text 208 143 Saída: bang, f 6;
-#X obj 18 20 cnv 15 220 50 empty empty empty 20 12 0 14 -262130 -66577
+#X text 2 69 Saída:(f \, a), f 6;
+#X text 209 69 Saída: bang, f 6;
+#X obj 305 22 cnv 15 220 60 empty empty empty 20 12 0 14 -262130 -66577
 0;
-#X text 19 23 Lê um arquivo MIDI e devolve duplas (frequência \,
-amplitude) na esquerda e bangs (fim de notas) na direitas., f 36;
-#X text 514 324 Amplitude;
-#X obj 423 344 s \$0-ampl;
-#X obj 423 322 expr $f1 / 127;
+#X text 318 373 Amplitude;
+#X obj 227 393 s \$0-ampl;
+#X obj 227 371 expr $f1 / 127;
+#X text 306 27 Esse patch lê um arquivo MIDI e devolve duplas (frequência
+\, amplitude) na esquerda e bangs (fim de notas) na direitas., f 36
+;
 #X connect 0 0 6 0;
 #X connect 1 0 19 0;
 #X connect 1 0 27 0;
@@ -70,8 +71,8 @@ amplitude) na esquerda e bangs (fim de notas) na direitas., f 36;
 #X connect 18 0 5 0;
 #X connect 19 0 22 0;
 #X connect 20 0 21 0;
-#X connect 20 1 41 0;
+#X connect 20 1 40 0;
 #X connect 23 0 18 0;
 #X connect 28 0 19 1;
-#X connect 41 0 40 0;
-#X coords 0 -1 1 1 250 175 1 0 0;
+#X connect 40 0 39 0;
+#X coords 0 -1 1 1 250 100 1 0 0;

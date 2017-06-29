@@ -1,0 +1,109 @@
+#N canvas 23 64 1124 568 10;
+#X obj 437 229 osc~;
+#X obj 422 481 outlet~;
+#X obj 422 17 inlet;
+#X obj 784 187 inlet;
+#X text 461 11 <-- Entrada da esquerda:;
+#X text 826 183 <-- Entrada da direita:;
+#X text 827 197 Recebe bangs que sinalizam o final das notas.;
+#X text 462 25 Recebe pares (frequência \, amplitude);
+#X obj 899 245 outlet;
+#X text 945 242 <-- Saída da direita:;
+#X text 420 503 ^ Saída da esquerda:;
+#X text 419 517 Sinal sintetizado.;
+#X text 945 256 Bang recebido pela entrada.;
+#X obj 656 78 outlet;
+#X text 702 74 <-- Saída do meio:;
+#X text 703 87 Par (frequência \, amplitude) recebido pela entrada
+, f 27;
+#X obj 422 46 unpack;
+#X floatatom 422 95 5 0 0 0 - - -, f 5;
+#X text 457 99 Frequência Central (Portadora), f 18;
+#X text 503 254 Amplitude de modulação;
+#X text 3 18 Entrada:(f \, a), f 8;
+#X text 247 16 Entrada:bang, f 8;
+#X text 2 148 Saída:sinal, f 6;
+#X text 134 147 Saída:(f \, a), f 6;
+#X text 259 145 Saída:bang, f 6;
+#X obj 457 147 r \$0-harmonicidade;
+#X obj 474 230 r \$0-indice-mod;
+#X obj 437 184 *;
+#X text 574 148 H = f_m / f_c;
+#X text 477 208 f_m = f_c * H;
+#X text 572 231 I = a_m / f_m;
+#X obj 474 259 *;
+#X text 503 266 a_m = I * f_m;
+#X obj 474 344 sig~;
+#X obj 474 312 expr if($f3 \, $f1 * $f2 \, $f1);
+#X obj 455 68 s \$0-ampl;
+#X obj 556 290 r \$0-ampl;
+#X obj 639 290 r \$0-toggle;
+#X text 650 312 Se o toggle está ativado \, vincula a amplitude da
+entrada ao índice de modulação \, multiplicando I pela amplitude.
+Se não só repassa I., f 49;
+#X obj 16 214 cnv 15 340 150 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 20 216 Esse patch recebe pares (frequência \, amplitude) representando
+notas MIDI e bangs representado o fim das notas e faz uma síntese
+FM \, usando os valores definidos pelo usuário para a harmonicidade
+H = f_m / f_c e o índice de modulação I = a_m / f_m. Devolve o sinal
+sintetizado na esquerda \, o par (f \, a) no meio e bang na direita.
+O usuário pode escolher também se ele quer ou não vincular a amplitude
+da entrada ao índice de modulação \; se ele ativar o toggle correspondente
+a essa opção \, I passa a valer a * I \, onde a é a amplitude da
+entrada., f 55;
+#X obj 15 115 hsl 180 20 1 10 0 0 \$0-indice-mod empty Índice_de_Modulação
+-2 -8 0 10 -262144 -1 -1 14500 1;
+#X obj 15 69 hsl 180 20 1 10 0 0 \$0-harmonicidade empty Harmonicidade
+-2 -8 0 10 -262144 -1 -1 2100 1;
+#X obj 239 92 tgl 30 0 \$0-toggle empty Vincular -7 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 491 389 r \$0-osc-zero;
+#X obj 784 241 s \$0-osc-zero;
+#X obj 422 389 +~;
+#X obj 422 114 sig~;
+#X obj 422 419 osc~;
+#X floatatom 474 282 5 0 0 0 - - -, f 5;
+#X floatatom 437 207 5 0 0 0 - - -, f 5;
+#X text 478 196 <-- Frequência de modulação;
+#X obj 437 367 *~;
+#X obj 422 451 *~;
+#X obj 347 67 s \$0-nota;
+#X msg 347 46 1;
+#X obj 512 434 r \$0-nota;
+#X text 582 378 Para de tocar (multiplica por 0) quando recebe a mensagem
+que vem do inlet da direita., f 32;
+#X text 575 435 Volta a tocar (multiplica por 1) quando recebe a mensagem
+que vem do inlet da esquerda.;
+#X msg 784 217 0;
+#X connect 0 0 52 0;
+#X connect 2 0 13 0;
+#X connect 2 0 16 0;
+#X connect 2 0 55 0;
+#X connect 3 0 8 0;
+#X connect 3 0 59 0;
+#X connect 16 0 17 0;
+#X connect 16 1 35 0;
+#X connect 17 0 27 0;
+#X connect 17 0 47 0;
+#X connect 25 0 27 1;
+#X connect 25 0 31 1;
+#X connect 26 0 31 0;
+#X connect 27 0 50 0;
+#X connect 31 0 49 0;
+#X connect 33 0 52 1;
+#X connect 34 0 33 0;
+#X connect 36 0 34 1;
+#X connect 37 0 34 2;
+#X connect 44 0 53 1;
+#X connect 46 0 48 0;
+#X connect 47 0 46 0;
+#X connect 48 0 53 0;
+#X connect 49 0 34 0;
+#X connect 50 0 0 0;
+#X connect 52 0 46 1;
+#X connect 53 0 1 0;
+#X connect 55 0 54 0;
+#X connect 56 0 53 1;
+#X connect 59 0 45 0;
+#X coords 0 -1 1 1 300 180 1 0 0;
