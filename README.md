@@ -16,5 +16,11 @@ http://www.pd-tutorial.com/english/ch03s03.html
 ## 3.6 - Síntese Subtrativa (Formantes)
 http://paca.ime.usp.br/pluginfile.php/125785/mod_assign/introattachment/0/sintese_subtrativa_formantes_vogais.pdf?forcedownload=1
 
+## 3.7 - Karplus Strong
+http://pd-tutorial.com/english/ch03s04.html
+
 ## 3.8 - Síntese FM
 http://write.flossmanuals.net/pure-data/frequency-modulation/
+
+## 4.1 - ADSR Envelope
+https://www.youtube.com/watch?v=49a-IcuDlJE
