@@ -1,7 +1,8 @@
-#N canvas 9 22 1263 692 10;
-#X obj 166 13 LeitorArquivo;
+#N canvas 9 50 1263 692 10;
+#X obj 169 12 LeitorArquivo;
 #X obj 426 13 EntradaMidi;
-#X obj 444 420 Tocador;
+#X obj 357 414 Tocador;
 #X obj 791 76 SintetizadorVCO;
-#X obj 165 164 SintetizadorFM;
+#X obj 33 242 SintetizadorFM;
+#X obj 414 204 KarplusStrong;
 #X coords 0 692 1 691 85 60 0;
