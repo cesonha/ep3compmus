@@ -1,0 +1,63 @@
+#N canvas 393 120 839 346 10;
+#X obj 547 184 inlet~;
+#X obj 623 184 inlet;
+#X obj 478 211 freeverb~;
+#X obj 37 100 hsl 128 15 0 1 0 0 \$0-damping empty Damping -2 -8 0
+10 -262144 -1 -1 6500 1;
+#X obj 37 134 hsl 128 15 0 1 0 0 \$0-width empty Width -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 37 168 hsl 128 15 0 1 0 0 \$0-dry-wet empty Dry/Wet -2 -8 0
+10 -262144 -1 -1 0 1;
+#X obj 37 68 hsl 128 15 0 1 0 0 \$0-room-size empty Room_Size -2 -8
+0 10 -262144 -1 -1 0 1;
+#X obj 34 200 tgl 15 0 \$0-bypass empty Bypass 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 154 200 tgl 15 0 \$0-freeze empty Freeze -38 7 0 10 -262144
+-1 -1 0 1;
+#X text 1 11 Entrada:sinal, f 8;
+#X text 146 10 Entrada:(f \, a), f 8;
+#X obj 222 64 r \$0-room-size;
+#X obj 319 63 r \$0-damping;
+#X obj 405 63 r \$0-width;
+#X obj 727 9 r \$0-dry-wet;
+#X obj 477 63 r \$0-bypass;
+#X obj 554 63 r \$0-freeze;
+#X msg 222 86 roomsize \$1;
+#X msg 319 85 damping \$1;
+#X msg 405 85 width \$1;
+#X msg 477 85 bypass \$1;
+#X msg 554 85 freeze \$1;
+#X obj 633 52 expr (1 - $f1);
+#X msg 727 85 wet \$1;
+#X msg 633 85 dry \$1;
+#X obj 466 305 dac~;
+#X obj 37 248 hsl 128 15 0 1 0 0 \$0-volume empty Volume -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 424 241 r \$0-volume;
+#X obj 382 242 *~ 1;
+#X obj 556 232 r \$0-volume;
+#X obj 535 258 *~ 1;
+#X connect 0 0 2 0;
+#X connect 0 0 2 1;
+#X connect 2 0 28 0;
+#X connect 2 1 30 0;
+#X connect 11 0 17 0;
+#X connect 12 0 18 0;
+#X connect 13 0 19 0;
+#X connect 14 0 22 0;
+#X connect 14 0 23 0;
+#X connect 15 0 20 0;
+#X connect 16 0 21 0;
+#X connect 17 0 2 0;
+#X connect 18 0 2 0;
+#X connect 19 0 2 0;
+#X connect 20 0 2 0;
+#X connect 21 0 2 0;
+#X connect 22 0 24 0;
+#X connect 23 0 2 0;
+#X connect 24 0 2 0;
+#X connect 27 0 28 1;
+#X connect 28 0 25 0;
+#X connect 29 0 30 1;
+#X connect 30 0 25 1;
+#X coords 0 -1 1 1 200 275 1 0 0;
