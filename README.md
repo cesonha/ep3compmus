@@ -7,6 +7,8 @@ http://drymonitis.me/wp-content/uploads/2016/02/making_VCOs_in_pure_data.pdf
 
 http://write.flossmanuals.net/pure-data/generating-waveforms/
 
+https://forum.pdpatchrepo.info/topic/5985/trying-to-find-a-way-to-create-waveforms-with-sinesum#5
+
 ## 3.4 -  Síntese Aditiva por fórmulas fechadas
 http://paca.ime.usp.br/pluginfile.php/125785/mod_assign/introattachment/0/sintese_aditiva_formulas_fechadas.pdf?forcedownload=1
 
@@ -25,5 +27,14 @@ http://write.flossmanuals.net/pure-data/frequency-modulation/
 ## 4.1 - ADSR Envelope
 https://www.youtube.com/watch?v=49a-IcuDlJE
 
+## 5.1 - FIR
+iemlib/FIR~ help (PD)
+
+## 5.4 - Wah-Wah/Auto-Wah/Dynamic Wah
+https://guitarextended.wordpress.com/2012/01/07/wha-wha-auto-with-pure-data/
+
 ## 5.5 - Phaser
 https://guitarextended.wordpress.com/2011/12/28/phaserchorus-effect-with-pure-data/
+
+## 5.7 - Reverb
+freeverb~ help (PD)
