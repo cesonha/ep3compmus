@@ -40,4 +40,6 @@ color -1.67772e+12;
 #X connect 6 1 1 1;
 #X connect 7 0 0 2;
 #X connect 8 0 1 2;
+#X connect 13 0 0 0;
+#X connect 13 1 1 0;
 #X coords 0 -1 1 1 645 120 1 10 5;
