@@ -24,3 +24,6 @@ http://write.flossmanuals.net/pure-data/frequency-modulation/
 
 ## 4.1 - ADSR Envelope
 https://www.youtube.com/watch?v=49a-IcuDlJE
+
+## 5.5 - Phaser
+https://guitarextended.wordpress.com/2011/12/28/phaserchorus-effect-with-pure-data/
