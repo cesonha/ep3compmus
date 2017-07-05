@@ -1,4 +1,4 @@
-#N canvas 586 58 587 489 10;
+#N canvas 552 99 587 489 10;
 #X obj 55 108 notein;
 #X floatatom 88 130 5 0 0 0 - - -, f 5;
 #X floatatom 106 180 5 0 0 0 - - -, f 5;
@@ -24,10 +24,10 @@ que a nota acabou., f 38;
 #X text 421 258 Amplitude;
 #X obj 327 280 s \$0-ampl;
 #X obj 32 375 s \$0-freq;
-#X floatatom 84 37 5 0 0 1 Amplitude #0-ampl -, f 5;
-#X floatatom 84 19 5 0 0 1 Frequência #0-freq -, f 5;
-#X text 6 52 Saída: (f \, a), f 6;
-#X text 207 52 Saída:bang, f 6;
+#X floatatom 84 52 5 0 0 1 Amplitude #0-ampl -, f 5;
+#X floatatom 84 34 5 0 0 1 Frequência #0-freq -, f 5;
+#X text 6 67 Saída: (f \, a), f 6;
+#X text 207 67 Saída:bang, f 6;
 #X obj 277 26 cnv 15 220 60 empty empty empty 20 12 0 14 -262130 -66577
 0;
 #X text 278 29 Esse patch lê a entrada MIDI e devolve duplas (frequência
@@ -48,4 +48,4 @@ que a nota acabou., f 38;
 #X connect 9 1 20 0;
 #X connect 10 0 8 1;
 #X connect 20 0 22 0;
-#X coords 0 -1 1 1 250 85 1 0 0;
+#X coords 0 -1 1 1 250 100 1 0 0;
