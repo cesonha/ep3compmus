@@ -1,4 +1,4 @@
-#N canvas 534 72 866 559 10;
+#N canvas 291 29 952 694 10;
 #X floatatom 721 234 5 0 0 0 - - -, f 5;
 #X obj 498 285 del;
 #X msg 465 311 1;
@@ -13,14 +13,14 @@
 #X obj 663 109 outlet;
 #X obj 605 442 r \$0-atenuacao;
 #X obj 89 68 hsl 128 15 0.93 0.99 0 0 \$0-atenuacao empty Atenuação
--2 -8 0 10 -262144 -1 -1 12700 1;
+-2 -8 0 10 -262144 -1 -1 300 1;
 #X obj 620 558 r \$0-ampl;
 #X obj 508 112 s \$0-ampl;
-#X obj 413 672 outlet~;
-#X obj 909 120 inlet;
-#X obj 1024 203 outlet;
-#X msg 910 161 0;
-#X obj 909 205 s \$0-osc-zero;
+#X obj 419 580 outlet~;
+#X obj 750 65 inlet;
+#X obj 865 148 outlet;
+#X msg 751 106 0;
+#X obj 750 150 s \$0-osc-zero;
 #X text 708 250 duration of one period (ms);
 #X text 193 11 Entrada: bang;
 #X text 5 19 Entrada:(f \, a);
@@ -30,11 +30,11 @@
 #X obj 427 359 vline~;
 #X obj 544 249 t f f;
 #X obj 569 368 fexpr~ 0.5*$x1[0]+0.5*$x1[-1];
-#X obj 430 564 *~ 1;
+#X obj 426 498 *~ 1;
 #X floatatom 502 488 5 0 0 0 - - -, f 5;
-#X obj 177 648 delwrite~ buffer 2000;
+#X obj 183 556 delwrite~ buffer 2000;
 #X obj 576 322 delread~ buffer;
-#X obj 380 587 +~;
+#X obj 376 521 +~;
 #X floatatom 524 174 5 0 0 0 - - -, f 5;
 #X obj 328 123 t b b;
 #X connect 1 0 3 0;
