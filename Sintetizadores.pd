@@ -30,12 +30,12 @@
 #X obj 1037 34 r \$0-vco-right-out;
 #X obj 1076 56 r \$0-ks-right-out;
 #X obj 450 258 hradio 30 1 0 3 empty empty empty 0 -8 0 10 -262144
--1 -1 2;
+-1 -1 0;
 #X text 453 235 FM;
 #X text 482 235 VCO;
 #X text 513 229 Karplus-Strong, f 8;
 #X obj 450 294 s \$0-sint;
-#X obj 22 330 cnv 15 300 105 empty \$0-fm-canvas empty 20 12 0 14 -262144
+#X obj 22 330 cnv 15 300 105 empty \$0-fm-canvas empty 20 12 0 14 -233017
 -1 0;
 #X obj 22 330 SintetizadorFM;
 #X obj 22 307 r \$0-fm-left-in;
@@ -73,7 +73,7 @@ no momento., f 21;
 #X connect 2 1 1 1;
 #X connect 3 0 1 0;
 #X restore 986 250 pd highlight;
-#X obj 22 488 cnv 15 300 55 empty \$0-ks-canvas empty 20 12 0 14 -233017
+#X obj 22 488 cnv 15 300 55 empty \$0-ks-canvas empty 20 12 0 14 -262144
 -66577 0;
 #X obj 22 488 KarplusStrong;
 #X obj 22 464 r \$0-ks-left-in;

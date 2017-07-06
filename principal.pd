@@ -1,9 +1,11 @@
-#N canvas 201 22 964 702 10;
-#X obj 260 1300 Tocador;
-#X obj 30 138 Sintetizadores;
-#X obj 30 12 Entrada;
-#X obj 76 585 Envelopes;
-#X obj 80 811 Efeitos;
+#N canvas 2 24 1194 703 10;
+#X obj 164 1339 Tocador;
+#X obj 30 129 Sintetizadores;
+#X obj 30 13 Entrada;
+#X obj 76 616 Envelopes;
+#X obj 97 843 Efeitos;
+#X obj 802 513 Tocador;
+#X obj 802 863 Tocador;
 #X connect 2 0 1 0;
 #X connect 2 1 1 1;
-#X coords 0 702 1 701 85 60 0;
+#X coords 0 703 1 702 85 60 0;

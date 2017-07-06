@@ -2,11 +2,11 @@
 #X obj 130 184 zexy/multiplex 0 0;
 #X obj 373 184 zexy/multiplex 0 0;
 #X obj 67 10 vradio 30 1 0 2 \$0-entrada empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 0;
 #X text 18 17 Arquivo;
 #X text 18 41 Teclado MIDI, f 7;
 #X obj 394 10 cnv 15 250 60 empty \$0-teclado-canvas empty 20 12 0
-14 -233017 -66577 0;
+14 -262144 -66577 0;
 #X obj 394 10 EntradaMIDI;
 #X obj 235 163 r \$0-entrada;
 #X obj 478 163 r \$0-entrada;
@@ -32,7 +32,7 @@ color -1.67772e+12;
 #X connect 6 0 0 0;
 #X restore 11 192 pd highlight;
 #X obj 130 10 cnv 15 250 60 empty \$0-arquivo-canvas empty 20 12 0
-14 -262144 -66577 0;
+14 -233017 -66577 0;
 #X obj 130 10 LeitorArquivo;
 #X text 12 76 Saída:(f \, a), f 6;
 #X text 612 76 Saída:bang, f 6;
