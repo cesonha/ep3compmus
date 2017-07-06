@@ -1,0 +1,112 @@
+#N canvas 0 39 1252 684 10;
+#X obj 302 15 inlet;
+#X obj 728 126 outlet~;
+#X obj 140 216 vradio 40 1 0 4 \$0-efeito empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X text 187 226 FIR;
+#X text 186 270 Phaser;
+#X text 186 311 Reverb;
+#X text 185 350 Wah-Wah;
+#X obj 75 15 r \$0-efeito;
+#X obj 443 15 r \$0-efeito;
+#X obj 655 45 r \$0-efeito;
+#X obj 302 41 zexy/demultiplex 0 0 0 0;
+#X obj 728 104 zexy/multiplex~ 0 0 0 0;
+#X obj 22 41 zexy/demultiplex~ 0 0 0 0;
+#X obj 22 127 s~ \$0-fir-left-in;
+#X obj 71 105 s~ \$0-phaser-left-in;
+#X obj 120 83 s~ \$0-reverb-left-in;
+#X obj 169 62 s~ \$0-wahwah-left-in;
+#X obj 22 15 inlet~;
+#X obj 443 61 s \$0-wahwah-right-in;
+#X obj 396 83 s \$0-reverb-right-in;
+#X obj 349 105 s \$0-phaser-right-in;
+#X obj 302 127 s \$0-fir-right-in;
+#X obj 863 80 r~ \$0-wahwah-out;
+#X obj 818 56 r~ \$0-reverb-out;
+#X obj 773 34 r~ \$0-phaser-out;
+#X obj 728 12 r~ \$0-fir-out;
+#X obj 285 296 r~ \$0-phaser-left-in;
+#X obj 476 295 r \$0-phaser-right-in;
+#X obj 284 339 s~ phaser-out;
+#N canvas 0 22 570 438 highlight 0;
+#X obj 242 58 t b f;
+#X obj 242 79 f \$0;
+#X text 25 35 Ajusta as cores dos canvas por trás das interfaces gráficas
+de cada efeito \, deixando destacado o que está selecionado no momento.
+, f 21;
+#X obj 192 104 zexy/demultiplex 0 0 0 0;
+#X msg 192 343 \; \$1-fir-canvas color 10 \; \$1-phaser-canvas color
+-1.67772e+12 \; \$1-reverb-canvas color -1.67772e+12 \; \$1-wahwah-canvas
+color -1.67772e+12;
+#X msg 239 270 \; \$1-phaser-canvas color 10 \; \$1-fir-canvas color
+-1.67772e+12 \; \$1-reverb-canvas color -1.67772e+12 \; \$1-wahwah-canvas
+color -1.67772e+12;
+#X msg 286 197 \; \$1-reverb-canvas color 10 \; \$1-fir-canvas color
+-1.67772e+12 \; \$1-phaser-canvas color -1.67772e+12 \; \$1-wahwah-canvas
+color -1.67772e+12;
+#X msg 333 124 \; \$1-wahwah-canvas color 10 \; \$1-fir-canvas color
+-1.67772e+12 \; \$1-phaser-canvas color -1.67772e+12 \; \$1-reverb-canvas
+color -1.67772e+12;
+#X obj 242 36 r \$0-efeito;
+#X connect 0 0 1 0;
+#X connect 0 1 3 1;
+#X connect 1 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 3 2 6 0;
+#X connect 3 3 7 0;
+#X connect 8 0 0 0;
+#X restore 1082 184 pd highlight;
+#X obj 140 420 cnv 15 400 200 empty \$0-fir-canvas empty 20 12 0 14
+-233017 -66577 0;
+#X obj 140 420 FIR;
+#X obj 140 400 r~ \$0-fir-left-in;
+#X obj 533 400 r \$0-fir-right-in;
+#X obj 20 633 s~ \$0-fir-out;
+#X obj 660 439 cnv 15 200 185 empty \$0-reverb-canvas empty 20 12 0
+14 -262144 -66577 0;
+#X obj 651 213 cnv 15 210 175 empty \$0-wahwah-canvas empty 20 12 0
+14 -262144 -66577 0;
+#X obj 660 439 Reverb;
+#X obj 660 627 s~ \$0-reverb-out;
+#X obj 660 419 r~ \$0-reverb-left-in;
+#X obj 853 415 r \$0-reverb-right-in;
+#X obj 651 213 Wah-Wah;
+#X obj 651 189 r~ \$0-wahwah-left-in;
+#X obj 874 189 r \$0-wahwah-right-in;
+#X obj 651 393 s~ \$0-wahwah-out;
+#X obj 392 316 cnv 15 100 60 empty \$0-phaser-canvas empty 20 12 0
+14 -262144 -66577 0;
+#X obj 435 321 Phaser;
+#X text 133 179 Entrada:sinal, f 8;
+#X text 816 179 Entrada:(f \, a), f 8;
+#X text 132 624 Saída:sinal, f 6;
+#X connect 0 0 10 0;
+#X connect 7 0 12 0;
+#X connect 8 0 10 1;
+#X connect 9 0 11 0;
+#X connect 10 0 21 0;
+#X connect 10 1 20 0;
+#X connect 10 2 19 0;
+#X connect 10 3 18 0;
+#X connect 11 0 1 0;
+#X connect 12 0 13 0;
+#X connect 12 1 14 0;
+#X connect 12 2 15 0;
+#X connect 12 3 16 0;
+#X connect 17 0 12 0;
+#X connect 22 0 11 3;
+#X connect 23 0 11 2;
+#X connect 24 0 11 1;
+#X connect 25 0 11 0;
+#X connect 31 0 34 0;
+#X connect 32 0 31 0;
+#X connect 33 0 31 1;
+#X connect 37 0 38 0;
+#X connect 39 0 37 0;
+#X connect 40 0 37 1;
+#X connect 41 0 44 0;
+#X connect 42 0 41 0;
+#X connect 43 0 41 1;
+#X coords 0 -1 1 1 740 475 2 130 180;

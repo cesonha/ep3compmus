@@ -1,17 +1,17 @@
-#N canvas 333 161 803 411 10;
-#X obj 130 214 zexy/multiplex 0 0;
-#X obj 373 214 zexy/multiplex 0 0;
-#X obj 67 16 vradio 50 1 0 2 \$0-entrada empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X text 18 31 Arquivo;
-#X text 18 84 Teclado MIDI, f 7;
-#X obj 394 16 cnv 15 250 100 empty \$0-teclado-canvas empty 20 12 0
-14 -262144 -66577 0;
-#X obj 394 16 EntradaMIDI;
-#X obj 235 193 r \$0-entrada;
-#X obj 478 193 r \$0-entrada;
-#X obj 130 236 outlet;
-#X obj 373 236 outlet;
+#N canvas 333 161 701 264 10;
+#X obj 130 184 zexy/multiplex 0 0;
+#X obj 373 184 zexy/multiplex 0 0;
+#X obj 67 10 vradio 30 1 0 2 \$0-entrada empty empty 0 -8 0 10 -262144
+-1 -1 1;
+#X text 18 17 Arquivo;
+#X text 18 41 Teclado MIDI, f 7;
+#X obj 394 10 cnv 15 250 60 empty \$0-teclado-canvas empty 20 12 0
+14 -233017 -66577 0;
+#X obj 394 10 EntradaMIDI;
+#X obj 235 163 r \$0-entrada;
+#X obj 478 163 r \$0-entrada;
+#X obj 130 206 outlet;
+#X obj 373 206 outlet;
 #N canvas 0 22 558 269 highlight 0;
 #X obj 242 58 t b f;
 #X obj 242 79 f \$0;
@@ -30,10 +30,12 @@ color -1.67772e+12;
 #X connect 3 0 4 0;
 #X connect 3 1 5 0;
 #X connect 6 0 0 0;
-#X restore 11 222 pd highlight;
-#X obj 130 16 cnv 15 250 100 empty \$0-arquivo-canvas empty 20 12 0
-14 -233017 -66577 0;
-#X obj 130 16 LeitorArquivo;
+#X restore 11 192 pd highlight;
+#X obj 130 10 cnv 15 250 60 empty \$0-arquivo-canvas empty 20 12 0
+14 -262144 -66577 0;
+#X obj 130 10 LeitorArquivo;
+#X text 12 76 Saída:(f \, a), f 6;
+#X text 612 76 Saída:bang, f 6;
 #X connect 0 0 9 0;
 #X connect 1 0 10 0;
 #X connect 6 0 0 1;
@@ -42,4 +44,4 @@ color -1.67772e+12;
 #X connect 8 0 1 2;
 #X connect 13 0 0 0;
 #X connect 13 1 1 0;
-#X coords 0 -1 1 1 645 120 1 10 5;
+#X coords 0 -1 1 1 645 100 2 10 5;

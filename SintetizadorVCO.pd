@@ -283,18 +283,10 @@
 #X restore 677 466 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array \$0-onda_sintetizada 64 float 1;
-#A 0 -0.453139 -0.453139 -0.453139 -0.453139 -0.453139 -0.453139 -0.453139
--0.453139 -0.453139 -0.453139 -0.453139 -0.453139 -0.453139 -0.453139
--0.453139 -0.453139 -0.453139 -0.453139 -0.453139 -0.453139 -0.453139
--0.453139 -0.453139 -0.453139 -0.453139 -0.453139 -0.453139 -0.453139
--0.453139 -0.453139 -0.453139 -0.453139 -0.453139 -0.453139 -0.453139
--0.453139 -0.453139 -0.453139 -0.453139 -0.453139 -0.453139 -0.453139
--0.453139 -0.453139 -0.453139 -0.453139 -0.453139 -0.453139 -0.453139
--0.453139 -0.453139 -0.453139 -0.453139 -0.453139 -0.453139 -0.453139
--0.453139 -0.453139 -0.453139 -0.453139 -0.453139 -0.453139 -0.453139
--0.453139;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 #X coords 0 1 64 -1 200 140 1 0 0;
-#X restore 184 72 graph;
+#X restore 174 32 graph;
 #X obj 407 52 inlet;
 #X obj 780 53 inlet;
 #X text 406 20 Entrada da esquerda:;
@@ -304,13 +296,13 @@
 #X obj 407 78 unpack;
 #X obj 275 460 phasor~;
 #X obj 275 482 *~ 2051;
-#X obj 24 64 vradio 30 1 0 5 \$0-forma-onda empty empty 0 -8 0 10 -262144
+#X obj 14 24 vradio 30 1 0 5 \$0-forma-onda empty empty 0 -8 0 10 -262144
 -1 -1 1;
-#X text 59 70 Senoidal;
-#X text 59 100 Triangular;
-#X text 58 129 Dente de Serra;
-#X text 58 159 Quadrada;
-#X text 58 193 Pulso;
+#X text 49 30 Senoidal;
+#X text 49 60 Triangular;
+#X text 48 89 Dente de Serra;
+#X text 48 119 Quadrada;
+#X text 48 153 Pulso;
 #X obj 658 129 r \$0-forma-onda;
 #N canvas 0 22 636 635 gera-triangular 0;
 #X obj 62 91 t b b;
@@ -559,11 +551,6 @@ harmônicos é simplesmente n (ou seja \, os harmônicos são 1 \,
 #X obj 649 306 r \$0-ds;
 #X obj 799 305 r \$0-qua;
 #X obj 912 304 r \$0-pul;
-#X text 4 19 Entrada: (f \, a), f 10;
-#X text 324 16 Entrada:bang, f 8;
-#X text 2 239 Saída:sinal, f 6;
-#X text 173 240 Saída: (f \, a), f 6;
-#X text 349 240 Saída:bang, f 6;
 #X obj 14 293 cnv 15 360 85 empty empty empty 20 12 0 14 -262130 -66577
 0;
 #X obj 130 601 outlet~;
@@ -596,18 +583,18 @@ de acordo com o formato escolhido. Mostra a forma de onda sintetizada
 no gráfico. Devolve o sinal sintetizado na esquerda \, o par (f \,
 a) no meio e os bangs na direita., f 57;
 #X connect 2 0 8 0;
-#X connect 2 0 54 0;
+#X connect 2 0 49 0;
 #X connect 3 0 24 0;
-#X connect 3 0 57 0;
-#X connect 8 0 60 0;
+#X connect 3 0 52 0;
+#X connect 8 0 55 0;
 #X connect 9 0 10 0;
-#X connect 10 0 64 0;
+#X connect 10 0 59 0;
 #X connect 17 0 29 1;
 #X connect 22 0 21 0;
 #X connect 22 1 21 1;
 #X connect 24 0 27 0;
 #X connect 25 0 29 0;
-#X connect 26 0 63 0;
+#X connect 26 0 58 0;
 #X connect 28 0 9 0;
 #X connect 29 0 34 0;
 #X connect 29 1 35 0;
@@ -627,11 +614,11 @@ a) no meio e os bangs na direita., f 57;
 #X connect 42 0 32 0;
 #X connect 43 0 30 0;
 #X connect 44 0 22 0;
-#X connect 60 0 61 0;
-#X connect 60 1 25 0;
-#X connect 64 0 23 0;
-#X connect 64 0 51 0;
-#X connect 66 0 67 0;
-#X connect 67 0 68 0;
-#X connect 68 0 23 0;
-#X coords 0 -1 1 1 390 270 1 0 0;
+#X connect 55 0 56 0;
+#X connect 55 1 25 0;
+#X connect 59 0 23 0;
+#X connect 59 0 46 0;
+#X connect 61 0 62 0;
+#X connect 62 0 63 0;
+#X connect 63 0 23 0;
+#X coords 0 -1 1 1 390 185 1 0 0;

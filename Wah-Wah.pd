@@ -1,0 +1,65 @@
+#N canvas 32 22 415 628 10;
+#X obj 50 183 inlet~;
+#X obj 50 432 vcf~;
+#X obj 166 581 outlet~;
+#X obj 14 106 hsl 128 15 0.5 4 0 0 \$0-lfo-freq empty LFO_Freq. -2
+-8 0 10 -262144 -1 -1 0 1;
+#X obj 16 27 hsl 128 15 0 700 0 0 \$0-min empty Range_Min -2 -8 0 10
+-262144 -1 -1 500 1;
+#X obj 15 67 hsl 128 15 700 6000 0 0 \$0-max empty Range_Max -2 -8
+0 10 -262144 -1 -1 12000 1;
+#X obj 255 203 bang;
+#X obj 255 255 -;
+#X floatatom 214 280 5 0 0 0 - - -, f 5;
+#X obj 174 28 vsl 15 128 0 20 0 0 \$0-Q \$0-Q-set Q 5 -9 0 10 -262144
+-1 -1 3366 1;
+#X obj 242 353 loadbang;
+#X msg 242 376 5.3;
+#X obj 60 232 osc~ 2;
+#X obj 60 254 +~ 1;
+#X obj 60 276 *~ 0.5;
+#X obj 255 183 r \$0-min;
+#X obj 329 228 r \$0-min;
+#X obj 255 277 s \$0-max-min;
+#X obj 60 326 *~ 1500;
+#X obj 60 378 +~ 200;
+#X obj 93 356 r \$0-min;
+#X obj 99 304 r \$0-max-min;
+#X obj 242 398 s \$0-Q-set;
+#X obj 71 411 r \$0-Q;
+#X obj 60 210 r \$0-lfo-freq;
+#X obj 264 228 r \$0-max;
+#X obj 144 195 inlet;
+#X obj 13 143 hsl 128 15 0 1 0 0 \$0-dry-wet empty Dry/Wet -2 -8 0
+10 -262144 -1 -1 10300 1;
+#X obj 247 489 r \$0-dry-wet;
+#X obj 232 512 *~;
+#X obj 166 550 +~;
+#X obj 24 512 expr~ (1 - $f2) * $v1;
+#X obj 147 456 r \$0-dry-wet;
+#X connect 0 0 1 0;
+#X connect 0 0 31 0;
+#X connect 1 0 29 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 7 0 17 0;
+#X connect 10 0 11 0;
+#X connect 11 0 22 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 18 0;
+#X connect 15 0 6 0;
+#X connect 16 0 7 1;
+#X connect 18 0 19 0;
+#X connect 19 0 1 1;
+#X connect 20 0 19 1;
+#X connect 21 0 18 1;
+#X connect 23 0 1 2;
+#X connect 24 0 12 0;
+#X connect 25 0 7 0;
+#X connect 28 0 29 1;
+#X connect 29 0 30 1;
+#X connect 30 0 2 0;
+#X connect 31 0 30 0;
+#X connect 32 0 31 1;
+#X coords 0 -1 1 1 210 175 1 0 0;

@@ -1,65 +1,60 @@
-#N canvas 347 22 878 676 10;
-#X text 19 134 Saída: sinal;
-#X text 230 134 Saida: (f \, a);
-#X obj 19 105 hsl 128 15 0 500 0 0 \$0-release empty Release -2 -8
-0 10 -262144 -1 -1 0 1;
-#X obj 19 65 hsl 128 15 0 300 0 0 \$0-attack empty Attack -2 -8 0 10
+#N canvas 347 22 582 608 10;
+#X obj 47 77 hsl 128 15 0 500 0 0 \$0-release empty Release -2 -8 0
+10 -262144 -1 -1 0 1;
+#X obj 47 37 hsl 128 15 0 300 0 0 \$0-attack empty Attack -2 -8 0 10
 -262144 -1 -1 0 1;
-#X obj 166 65 hsl 128 15 500 1000 0 0 \$0-max empty Max -2 -8 0 10
+#X obj 194 37 hsl 128 15 500 1000 0 0 \$0-max empty Max -2 -8 0 10
 -262144 -1 -1 0 1;
-#X obj 167 106 hsl 128 15 0 500 0 0 \$0-min empty Min -2 -8 0 10 -262144
+#X obj 195 78 hsl 128 15 0 500 0 0 \$0-min empty Min -2 -8 0 10 -262144
 -1 -1 0 1;
-#X text 13 28 Entrada: sinal;
-#X text 136 14 Entrada (f \, a);
-#X text 256 14 Entrada: bang;
-#X obj 29 179 inlet~;
-#X obj 92 585 *~;
-#X obj 87 633 outlet~;
-#X obj 165 554 vline~;
-#X obj 666 443 inlet;
-#X obj 660 488 pack f f;
-#X obj 652 527 0 \$2;
-#X obj 747 446 r \$0-release;
-#X obj 308 221 r \$0-attack;
-#X obj 146 173 inlet;
-#X obj 202 226 outlet;
-#X obj 104 233 unpack;
-#X obj 411 220 r \$0-max;
-#X obj 512 217 r \$0-min;
-#X floatatom 337 278 5 0 0 0 - - -, f 5;
-#X obj 460 341 random 100;
-#X floatatom 410 396 5 0 0 0 - - -, f 5;
-#X obj 463 374 / 100;
-#X obj 423 259 -;
-#X obj 397 329 + 0;
-#X obj 188 439 pack f f f f f;
-#X msg 174 491 \$2 \$3 \, \$5 \$4 \$3;
-#X obj 387 261 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 29 119 inlet~;
+#X obj 92 525 *~;
+#X obj 87 573 outlet~;
+#X obj 165 494 vline~;
+#X obj 380 362 inlet;
+#X obj 374 407 pack f f;
+#X obj 366 446 0 \$2;
+#X obj 461 365 r \$0-release;
+#X obj 308 161 r \$0-attack;
+#X obj 146 113 inlet;
+#X obj 202 166 outlet;
+#X obj 104 173 unpack;
+#X obj 411 160 r \$0-max;
+#X obj 512 157 r \$0-min;
+#X floatatom 337 218 5 0 0 0 - - -, f 5;
+#X obj 460 281 random 100;
+#X floatatom 410 336 5 0 0 0 - - -, f 5;
+#X obj 463 314 / 100;
+#X obj 423 199 -;
+#X obj 397 269 + 0;
+#X obj 188 379 pack f f f f f;
+#X msg 174 431 \$2 \$3 \, \$5 \$4 \$3;
+#X obj 387 201 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 409 288 random 2;
+#X obj 409 228 random 2;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 7 0 5 1;
+#X connect 8 0 9 0;
 #X connect 9 0 10 0;
-#X connect 10 0 11 0;
-#X connect 12 0 10 1;
+#X connect 10 0 7 0;
+#X connect 11 0 9 1;
+#X connect 12 0 24 2;
 #X connect 13 0 14 0;
-#X connect 14 0 15 0;
-#X connect 15 0 12 0;
-#X connect 16 0 14 1;
-#X connect 17 0 29 2;
-#X connect 18 0 19 0;
-#X connect 18 0 20 0;
-#X connect 18 0 29 0;
-#X connect 20 1 29 1;
-#X connect 21 0 27 0;
+#X connect 13 0 15 0;
+#X connect 13 0 24 0;
+#X connect 15 1 24 1;
+#X connect 16 0 22 0;
+#X connect 17 0 22 1;
+#X connect 17 0 23 1;
+#X connect 19 0 21 0;
+#X connect 20 0 24 4;
+#X connect 21 0 20 0;
 #X connect 22 0 27 1;
-#X connect 22 0 28 1;
-#X connect 24 0 26 0;
-#X connect 25 0 29 4;
-#X connect 26 0 25 0;
-#X connect 27 0 32 1;
-#X connect 28 0 23 0;
-#X connect 28 0 29 3;
-#X connect 29 0 30 0;
-#X connect 30 0 12 0;
-#X connect 31 0 32 0;
-#X connect 32 0 28 0;
-#X coords 0 -1 1 1 350 145 1 10 10;
+#X connect 23 0 18 0;
+#X connect 23 0 24 3;
+#X connect 24 0 25 0;
+#X connect 25 0 7 0;
+#X connect 26 0 27 0;
+#X connect 27 0 23 0;
+#X coords 0 -1 1 1 350 90 1 10 10;

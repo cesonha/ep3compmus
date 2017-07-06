@@ -30,27 +30,27 @@
 #X obj 1037 34 r \$0-vco-right-out;
 #X obj 1076 56 r \$0-ks-right-out;
 #X obj 450 258 hradio 30 1 0 3 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 2;
 #X text 453 235 FM;
 #X text 482 235 VCO;
 #X text 513 229 Karplus-Strong, f 8;
 #X obj 450 294 s \$0-sint;
-#X obj 22 250 cnv 15 300 180 empty \$0-fm-canvas empty 20 12 0 14 -233017
+#X obj 22 330 cnv 15 300 105 empty \$0-fm-canvas empty 20 12 0 14 -262144
 -1 0;
-#X obj 22 250 SintetizadorFM;
-#X obj 22 227 r \$0-fm-left-in;
-#X obj 315 227 r \$0-fm-right-in;
-#X obj 22 438 s~ \$0-fm-left-out;
-#X obj 168 437 s \$0-fm-mid-out;
-#X obj 315 437 s \$0-fm-right-out;
-#X obj 450 359 cnv 15 390 270 empty \$0-vco-canvas empty 20 12 0 14
+#X obj 22 330 SintetizadorFM;
+#X obj 22 307 r \$0-fm-left-in;
+#X obj 315 307 r \$0-fm-right-in;
+#X obj 22 442 s~ \$0-fm-left-out;
+#X obj 168 441 s \$0-fm-mid-out;
+#X obj 315 441 s \$0-fm-right-out;
+#X obj 450 359 cnv 15 390 185 empty \$0-vco-canvas empty 20 12 0 14
 -262144 -66577 0;
 #X obj 450 359 SintetizadorVCO;
 #X obj 450 336 r \$0-vco-left-in;
 #X obj 833 336 r \$0-vco-right-in;
-#X obj 450 638 s~ \$0-vco-left-out;
-#X obj 641 637 s \$0-vco-mid-out;
-#X obj 833 635 s \$0-vco-right-out;
+#X obj 450 549 s~ \$0-vco-left-out;
+#X obj 641 548 s \$0-vco-mid-out;
+#X obj 833 546 s \$0-vco-right-out;
 #N canvas 0 22 485 389 highlight 0;
 #X obj 242 36 r \$0-sint;
 #X obj 192 104 zexy/demultiplex 0 0 0;
@@ -73,14 +73,14 @@ no momento., f 21;
 #X connect 2 1 1 1;
 #X connect 3 0 1 0;
 #X restore 986 250 pd highlight;
-#X obj 22 498 cnv 15 300 125 empty \$0-ks-canvas empty 20 12 0 14 -262144
+#X obj 22 488 cnv 15 300 55 empty \$0-ks-canvas empty 20 12 0 14 -233017
 -66577 0;
-#X obj 22 498 KarplusStrong;
-#X obj 22 474 r \$0-ks-left-in;
-#X obj 315 474 r \$0-ks-right-in;
-#X obj 22 631 s~ \$0-ks-left-out;
-#X obj 168 630 s \$0-ks-mid-out;
-#X obj 315 630 s \$0-ks-right-out;
+#X obj 22 488 KarplusStrong;
+#X obj 22 464 r \$0-ks-left-in;
+#X obj 315 464 r \$0-ks-right-in;
+#X obj 22 548 s~ \$0-ks-left-out;
+#X obj 168 547 s \$0-ks-mid-out;
+#X obj 315 547 s \$0-ks-right-out;
 #X obj 895 433 zexy/demultiplex 0 0 0;
 #X obj 895 391 r \$0-sint;
 #X obj 895 410 t b f;
@@ -93,6 +93,11 @@ no momento., f 21;
 #X obj 1085 578 t b b;
 #X obj 1112 598 s \$0-ks-right-in;
 #X obj 1085 620 s \$0-vco-right-in;
+#X text 13 228 Entrada:(f \, a), f 8;
+#X text 796 229 Entrada:bang, f 8;
+#X text 412 566 Saída:(f \, a), f 6;
+#X text 13 566 Saída:sinal, f 6;
+#X text 808 564 Saída:bang, f 6;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;
@@ -146,4 +151,4 @@ no momento., f 21;
 #X connect 63 1 65 0;
 #X connect 66 0 68 0;
 #X connect 66 1 67 0;
-#X coords 0 -1 1 1 840 420 2 10 225;
+#X coords 0 -1 1 1 840 375 2 10 225;

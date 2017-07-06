@@ -65,16 +65,11 @@ que vem do inlet da direita., f 32;
 #X text 575 435 Volta a tocar (multiplica por 1) quando recebe a mensagem
 que vem do inlet da esquerda.;
 #X msg 784 217 0;
-#X text 3 18 Entrada:(f \, a), f 8;
-#X text 247 16 Entrada:bang, f 8;
-#X text 2 148 Saída:sinal, f 6;
-#X text 134 147 Saída:(f \, a), f 6;
-#X text 259 145 Saída:bang, f 6;
-#X obj 15 115 hsl 180 20 1 30 0 0 \$0-indice-mod empty Índice_de_Modulação
--2 -8 0 10 -262144 -1 -1 17100 1;
-#X obj 15 69 hsl 180 20 1 30 0 0 \$0-harmonicidade empty Harmonicidade
--2 -8 0 10 -262144 -1 -1 16900 1;
-#X obj 239 92 tgl 30 0 \$0-toggle empty Vincular -7 -8 0 10 -262144
+#X obj 15 75 hsl 180 20 1 30 0 0 \$0-indice-mod empty Índice_de_Modulação
+-2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 15 29 hsl 180 20 1 30 0 0 \$0-harmonicidade empty Harmonicidade
+-2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 239 52 tgl 30 0 \$0-toggle empty Vincular -7 -8 0 10 -262144
 -1 -1 0 1;
 #X connect 0 0 44 0;
 #X connect 2 0 13 0;
@@ -106,4 +101,4 @@ que vem do inlet da esquerda.;
 #X connect 47 0 46 0;
 #X connect 48 0 45 1;
 #X connect 51 0 37 0;
-#X coords 0 -1 1 1 300 180 1 0 0;
+#X coords 0 -1 1 1 300 105 1 0 0;
