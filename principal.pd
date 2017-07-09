@@ -1,13 +1,17 @@
-#N canvas 201 50 964 702 10;
-#X obj 260 1300 Tocador;
-#X obj 30 138 Sintetizadores;
-#X obj 30 12 Entrada;
-#X obj 30 579 Envelopes;
-#X obj 85 795 Efeitos;
-#X text 460 529 para usar: mudar slider Sustain do ADSR para 1 porque
+#N canvas 2 50 1194 703 10;
+#X obj 164 1339 Tocador;
+#X obj 30 129 Sintetizadores;
+#X obj 30 13 Entrada;
+#X obj 76 616 Envelopes;
+#X obj 97 843 Efeitos;
+#X obj 802 513 Tocador;
+#X obj 802 863 Tocador;
+#X text 305 542 para usar: mudar slider Sustain do ADSR para 1 porque
 isso impede de sair o som se todos sliders estiverem no zero;
-#X text 682 27 Cesar Cano de Oliveira NUSP: 8.53617e+006 Fabio Muller
-NUSP: 8.53613e+006;
+#X text 682 27 Cesar Cano de Oliveira NUSP: 8-5-3-6-1-6-9 Fabio Muller
+NUSP: 8-5-3-6-1-2-7;
+#X text 837 85 *os números USPS nao estavam salvando corretamente
+;
 #X connect 1 0 3 0;
 #X connect 1 1 3 1;
 #X connect 1 2 3 2;
@@ -16,4 +20,4 @@ NUSP: 8.53613e+006;
 #X connect 3 0 4 0;
 #X connect 3 1 4 1;
 #X connect 4 0 0 0;
-#X coords 0 702 1 701 85 60 0;
+#X coords 0 703 1 702 85 60 0;
