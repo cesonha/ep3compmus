@@ -1,18 +1,17 @@
-#N canvas 413 18 952 694 10;
+#N canvas 216 22 952 694 10;
 #X floatatom 721 234 5 0 0 0 - - -, f 5;
 #X obj 498 285 del;
 #X msg 465 311 1;
 #X msg 497 333 0;
 #X obj 259 289 noise~;
 #X obj 378 384 *~;
-#X text 596 185 Frequency (Hz.);
 #X obj 537 220 expr 1000 / $f1;
 #X obj 376 26 inlet;
 #X obj 378 87 unpack;
 #X obj 663 109 outlet;
 #X obj 599 418 r \$0-atenuacao;
 #X obj 94 24 hsl 128 15 0 1 0 0 \$0-atenuacao empty Atenuação -2
--8 0 10 -262144 -1 -1 12700 1;
+-8 0 10 -262144 -1 -1 0 1;
 #X obj 620 558 r \$0-ampl;
 #X obj 508 112 s \$0-ampl;
 #X obj 419 580 outlet~;
@@ -20,7 +19,6 @@
 #X obj 865 148 outlet;
 #X msg 751 106 0;
 #X obj 750 150 s \$0-osc-zero;
-#X text 708 250 duration of one period (ms);
 #X obj 427 359 vline~;
 #X obj 544 249 t f f;
 #X obj 569 368 fexpr~ 0.5*$x1[0]+0.5*$x1[-1];
@@ -34,36 +32,49 @@
 #X obj 524 446 * -0.06;
 #X obj 484 467 + 0.99;
 #X text 434 66 pega a freq. e usa no algoritmo;
-#X text 561 486 aplica atenuação do slider \, com algumas contas
-pra que a direita seja com mais atenuação;
+#X text 561 486 <-- aplica atenuação do slider \, com algumas contas
+pra que a direita seja com mais atenuação e para evitar valores muito
+baixos (que causavam resultados ruins).;
+#X text 708 250 duração de um período (ms);
+#X text 596 185 Frequência (Hz);
+#X obj 43 101 cnv 15 200 250 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 41 116 Esse patch recebe um par de valores (frequência \,
+amplitude) pelo inlet da esquerda e bangs representando o fim de notas
+MIDI pelo inlet da esquerda e faz a síntese usando o algoritmo de
+Karplus-Strong. Ele devolve o sinal no outlet da esquerda \, o par
+(frequência \, amplitude) recebido no outlet do meio e o bang recebido
+no outlet da direita. Além disso \, há um controle de atenuação
+disponível para o usuário que controla o parâmetro de atenuação
+da síntese., f 32;
 #X connect 1 0 3 0;
-#X connect 2 0 21 0;
-#X connect 3 0 21 0;
+#X connect 2 0 19 0;
+#X connect 3 0 19 0;
 #X connect 4 0 5 0;
-#X connect 5 0 28 0;
-#X connect 7 0 0 0;
-#X connect 7 0 22 0;
-#X connect 8 0 9 0;
-#X connect 8 0 10 0;
-#X connect 8 0 30 0;
-#X connect 9 0 29 0;
-#X connect 9 1 14 0;
-#X connect 11 0 31 0;
-#X connect 16 0 17 0;
-#X connect 16 0 18 0;
-#X connect 18 0 19 0;
-#X connect 21 0 5 1;
-#X connect 22 0 1 1;
-#X connect 22 1 27 0;
-#X connect 23 0 24 0;
-#X connect 24 0 28 1;
-#X connect 25 0 24 1;
-#X connect 27 0 23 0;
-#X connect 28 0 26 0;
-#X connect 28 0 15 0;
-#X connect 29 0 7 0;
-#X connect 30 0 2 0;
-#X connect 30 1 1 0;
-#X connect 31 0 32 0;
-#X connect 32 0 25 0;
+#X connect 5 0 26 0;
+#X connect 6 0 0 0;
+#X connect 6 0 20 0;
+#X connect 7 0 8 0;
+#X connect 7 0 9 0;
+#X connect 7 0 28 0;
+#X connect 8 0 27 0;
+#X connect 8 1 13 0;
+#X connect 10 0 29 0;
+#X connect 15 0 16 0;
+#X connect 15 0 17 0;
+#X connect 17 0 18 0;
+#X connect 19 0 5 1;
+#X connect 20 0 1 1;
+#X connect 20 1 25 0;
+#X connect 21 0 22 0;
+#X connect 22 0 26 1;
+#X connect 23 0 22 1;
+#X connect 25 0 21 0;
+#X connect 26 0 24 0;
+#X connect 26 0 14 0;
+#X connect 27 0 6 0;
+#X connect 28 0 2 0;
+#X connect 28 1 1 0;
+#X connect 29 0 30 0;
+#X connect 30 0 23 0;
 #X coords 0 0 1 1 300 55 1 0 0;

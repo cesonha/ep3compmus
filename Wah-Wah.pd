@@ -1,13 +1,13 @@
-#N canvas 32 22 415 628 10;
+#N canvas 32 22 440 628 10;
 #X obj 50 183 inlet~;
 #X obj 50 432 vcf~;
 #X obj 166 581 outlet~;
 #X obj 14 106 hsl 128 15 0.5 4 0 0 \$0-lfo-freq empty LFO_Freq. -2
 -8 0 10 -262144 -1 -1 0 1;
 #X obj 16 27 hsl 128 15 0 700 0 0 \$0-min empty Range_Min -2 -8 0 10
--262144 -1 -1 500 1;
+-262144 -1 -1 0 1;
 #X obj 15 67 hsl 128 15 700 6000 0 0 \$0-max empty Range_Max -2 -8
-0 10 -262144 -1 -1 12000 1;
+0 10 -262144 -1 -1 0 1;
 #X obj 255 203 bang;
 #X obj 255 255 -;
 #X floatatom 214 280 5 0 0 0 - - -, f 5;
@@ -29,14 +29,25 @@
 #X obj 71 411 r \$0-Q;
 #X obj 60 210 r \$0-lfo-freq;
 #X obj 264 228 r \$0-max;
-#X obj 144 195 inlet;
+#X obj 179 193 inlet;
 #X obj 13 143 hsl 128 15 0 1 0 0 \$0-dry-wet empty Dry/Wet -2 -8 0
-10 -262144 -1 -1 10300 1;
+10 -262144 -1 -1 0 1;
 #X obj 247 489 r \$0-dry-wet;
 #X obj 232 512 *~;
 #X obj 166 550 +~;
 #X obj 24 512 expr~ (1 - $f2) * $v1;
 #X obj 147 456 r \$0-dry-wet;
+#X text 166 211 Inlet da direita com par (f \, a) não é usado.,
+f 12;
+#X text 102 192 LFO;
+#X text 114 286 Máximo;
+#X obj 119 334 Mínimo;
+#X obj 226 8 cnv 15 200 120 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 236 14 Esse patch recebe um sinal no inltet da esquerda e pares
+(frequência \, amplitude) no inlet da direita. Com os parâmetros
+escolhidos pelo usuário \, ele aplica um efeito Wah-Wah e devolve
+o sinal resultante no outlet., f 29;
 #X connect 0 0 1 0;
 #X connect 0 0 31 0;
 #X connect 1 0 29 0;

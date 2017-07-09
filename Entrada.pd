@@ -1,4 +1,4 @@
-#N canvas 333 161 701 264 10;
+#N canvas 333 161 692 317 10;
 #X obj 130 184 zexy/multiplex 0 0;
 #X obj 373 184 zexy/multiplex 0 0;
 #X obj 67 10 vradio 30 1 0 2 \$0-entrada empty empty 0 -8 0 10 -262144
@@ -36,6 +36,10 @@ color -1.67772e+12;
 #X obj 130 10 LeitorArquivo;
 #X text 12 76 Saída:(f \, a), f 6;
 #X text 612 76 Saída:bang, f 6;
+#X obj 157 267 cnv 15 400 20 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 178 268 Abstração para selecionar o método de entrada desejado.
+;
 #X connect 0 0 9 0;
 #X connect 1 0 10 0;
 #X connect 6 0 0 1;

@@ -68,6 +68,9 @@ de cada envelope \, deixando destacado o que está selecionado no momento.
 #X text 811 183 Entrada:bang, f 8;
 #X text 21 350 Saída:sinal, f 6;
 #X text 823 350 Saída:(f \, a), f 6;
+#X obj 91 129 cnv 15 275 20 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 96 129 Abstração para selecionar o envelope usado.;
 #X connect 0 0 5 0;
 #X connect 1 0 6 0;
 #X connect 2 0 3 0;

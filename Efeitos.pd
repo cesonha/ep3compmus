@@ -82,6 +82,10 @@ color -1.67772e+12;
 #X obj 431 198 r \$0-phaser-right-in;
 #X obj 291 258 Phaser;
 #X obj 291 366 s~ \$0-phaser-out;
+#X obj 903 329 cnv 15 180 30 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 904 330 Abstração para selecionar o efeito que vai ser aplicado.
+, f 28;
 #X connect 0 0 10 0;
 #X connect 7 0 12 0;
 #X connect 8 0 10 1;

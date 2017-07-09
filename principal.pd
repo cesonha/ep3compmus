@@ -8,9 +8,13 @@
 #X obj 802 863 Tocador;
 #X text 305 542 para usar: mudar slider Sustain do ADSR para 1 porque
 isso impede de sair o som se todos sliders estiverem no zero;
-#X text 682 27 Cesar Cano de Oliveira NUSP: 8-5-3-6-1-6-9 Fabio Muller
-NUSP: 8-5-3-6-1-2-7;
-#X text 837 85 *os números USPS nao estavam salvando corretamente
+#X text 682 27 Cesar Cano de Oliveira - NUSP: 8-5-3-6-1-6-9 Fabio Brzostek
+Muller - NUSP: 8-5-3-6-1-2-7, f 44;
+#X text 944 693 Obs.: essas caixas (acima e abaixo) que recebem o sinal
+e tocam ele (e permitem ajustar o volume) estão posicionadas aqui
+para facilitar o teste usando só o sintetizador ou só o sintetizador
+e o envelope., f 35;
+#X text 837 85 ^ os números USP não estavam salvando corretamente
 ;
 #X connect 1 0 3 0;
 #X connect 1 1 3 1;

@@ -23,6 +23,16 @@
 #X obj 223 145 outlet;
 #X obj 194 210 pack f f f f f;
 #X msg 202 295 \$2 \$3 \, \$5 \$4 \$3;
+#X text 389 88 Recebe parâmetros;
+#X text 220 268 Cria envelope com vline~;
+#X obj 273 379 cnv 15 360 100 empty empty empty 20 12 0 14 -262130
+-66577 0;
+#X text 274 378 Esse patch recebe um sinal pelo inlet da esquerda \,
+pares (frequência \, amplitude) pelo inlet do meio e bangs representando
+o final de notas MIDI pelo inlet da direita. Com os parâmetros de
+Ataque \, Decaimento \, Sustentação e Soltura definidos pelo usuário
+\, ele cria um envelope ADSR e devolve o sinal envelopado no outlet
+da esquerda. No da direita \, ele devolve o par recebido.;
 #X connect 0 0 3 0;
 #X connect 0 0 17 0;
 #X connect 0 0 18 0;

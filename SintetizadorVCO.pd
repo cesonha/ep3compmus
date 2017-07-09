@@ -568,9 +568,6 @@ harmônicos é simplesmente n (ou seja \, os harmônicos são 1 \,
 #X text 732 148 ^ Tipo de onda escolhido, f 9;
 #X obj 406 383 s \$0-tabela_forma_onda;
 #X obj 275 504 tabread4~ \$0-tabela_forma_onda;
-#X text 721 467 <-- A tabela \$0-tabela_forma_onda teve o atributo
-graph on parent desativado pois \, com ele ativado \, estava ocorrendo
-um bug estranho (explicado melhor no relatório)., f 49;
 #X obj 289 533 loadbang;
 #X obj 289 556 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
@@ -582,6 +579,10 @@ notas MIDI e bangs representando o fim das notas e sintetiza ondas
 de acordo com o formato escolhido. Mostra a forma de onda sintetizada
 no gráfico. Devolve o sinal sintetizado na esquerda \, o par (f \,
 a) no meio e os bangs na direita., f 57;
+#X text 721 467 <-- A tabela \$0-tabela_forma_onda teve o atributo
+graph on parent desativado pois \, com ele ativado \, estava ocorrendo
+um bug estranho em que uma versão fantasma desse gráfico aparecia
+no patch principal., f 47;
 #X connect 2 0 8 0;
 #X connect 2 0 49 0;
 #X connect 3 0 24 0;
@@ -618,7 +619,7 @@ a) no meio e os bangs na direita., f 57;
 #X connect 55 1 25 0;
 #X connect 59 0 23 0;
 #X connect 59 0 46 0;
+#X connect 60 0 61 0;
 #X connect 61 0 62 0;
-#X connect 62 0 63 0;
-#X connect 63 0 23 0;
+#X connect 62 0 23 0;
 #X coords 0 -1 1 1 390 185 1 0 0;

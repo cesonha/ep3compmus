@@ -1,4 +1,4 @@
-#N canvas 207 62 897 359 10;
+#N canvas 207 62 942 380 10;
 #X obj 441 7 inlet~;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array \$0-fir-coefs 64 float 0;
@@ -6,14 +6,14 @@
 #X restore 9 34 graph;
 #X obj 44 174 bng 15 250 50 0 \$0-bang-escolhe-arquivo empty Escolher_Arquivo
 17 7 0 10 -203904 -1 -1;
-#X obj 696 47 openpanel;
-#X obj 696 224 soundfiler;
-#X floatatom 696 252 5 0 0 0 - - -, f 5;
-#X obj 696 98 t l b;
-#X obj 759 126 f \$0;
-#X obj 696 157 list append;
-#X msg 696 188 \$1 \$2 \$3 \$4-fir-coefs;
-#X msg 696 76 list read -resize \$1;
+#X obj 707 77 openpanel;
+#X obj 707 254 soundfiler;
+#X floatatom 707 282 5 0 0 0 - - -, f 5;
+#X obj 707 128 t l b;
+#X obj 789 155 f \$0;
+#X obj 707 187 list append;
+#X msg 707 218 \$1 \$2 \$3 \$4-fir-coefs;
+#X msg 707 106 list read -resize \$1;
 #X obj 470 305 outlet~;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array \$0-fir-resposta 256 float 1;
@@ -61,8 +61,8 @@
 1;
 #X obj 540 304 tabwrite~ \$0-fir-resposta;
 #X obj 220 175 hsl 128 15 0 1 0 0 \$0-dry-wet empty Dry/Wet -2 -8 0
-10 -262144 -1 -1 10800 1;
-#X obj 696 24 r \$0-bang-escolhe-arquivo;
+10 -262144 -1 -1 0 1;
+#X obj 707 54 r \$0-bang-escolhe-arquivo;
 #X obj 481 133 r \$0-dry-wet;
 #X obj 466 160 *~;
 #X obj 564 187 r \$0-dry-wet;
@@ -71,6 +71,18 @@
 #X obj 583 6 inlet;
 #X obj 540 232 loadbang;
 #X obj 466 69 iemlib/FIR~ \$0-fir-coefs 64;
+#X text 510 24 Inlet da direita com par (f \, a) não foi usado, f
+24;
+#X text 511 87 ^ Lê arquivos com tamanho 64 (só conseguimos fazer
+com o tamanho hardcoded), f 27;
+#X obj 18 228 cnv 15 375 100 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 20 227 Esse patch recebe um sinal no inlet da esquerda e pares
+(frequência \, amplitude) no inlet da direita. O usuário deve usar
+o botão de escolher arquivo para escolher um arquivo de coeficientes.
+O filtro FIR é aplicado \, então \, usando os coeficientes do arquivo
+(mostrados no gráfico da esquerda) e o sinal resultante sai no outlet
+e é mostrado no gráfico da direita.;
 #X connect 0 0 21 0;
 #X connect 0 0 25 0;
 #X connect 3 0 10 0;

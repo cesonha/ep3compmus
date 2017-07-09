@@ -1,6 +1,6 @@
-#N canvas 0 50 1536 781 10;
+#N canvas 0 22 956 635 10;
 #X obj 538 140 hsl 128 15 0 10 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 900 1;
+-1 -1 0 1;
 #X obj 376 247 *~ 2;
 #X obj 376 267 +~ 2;
 #X obj 415 289 *~ 2;
@@ -12,34 +12,28 @@
 #X obj 414 224 +~ 0.5;
 #X obj 376 224 cos~;
 #X obj 415 265 cos~;
-#X obj 541 237 hsl 128 15 0 3 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 9900 1;
+#X obj 552 266 hsl 128 15 0 3 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
 #X obj 414 361 *~ 0.8;
 #X obj 376 422 *~ 0.8;
 #X obj 485 449 s~ output;
 #X obj 66 379 r~ output;
 #X obj 570 356 hsl 128 15 -0.9 0.9 0 0 empty empty empty -2 -8 0 10
--262144 -1 -1 4300 1;
-#X text 290 155 <-- Write to delay lines;
-#X text 486 335 <-- Read from delay line 2;
-#X text 480 399 <-- Read from delay line 1;
+-262144 -1 -1 0 1;
 #X obj 377 399 vd~ phase1;
 #X obj 163 161 delwrite~ phase1 100;
 #X text 448 190 <-- Low Frequency Oscillator (LFO);
 #X floatatom 535 164 5 0 0 0 - - -, f 5;
-#X floatatom 539 263 5 0 0 0 - - -, f 5;
+#X floatatom 550 292 5 0 0 0 - - -, f 5;
 #X floatatom 567 377 5 0 0 0 - - -, f 5;
-#X text 678 136 <-- Speed (try 0.7);
-#X text 683 235 <-- Depth (try 2.4);
-#X text 710 356 <-- Feedback (try -0.3);
 #X obj 132 574 outlet~;
 #X obj 136 117 inlet~;
 #X obj 68 35 hsl 128 15 0 10 0 0 \$0-frequencia empty Frequência -2
--8 0 10 -262144 -1 -1 900 1;
+-8 0 10 -262144 -1 -1 0 1;
 #X obj 576 103 r \$0-frequencia;
 #X obj 391 57 inlet;
 #X obj 69 76 hsl 128 15 0 1 0 0 \$0-wet empty Dry/Wet -2 -8 0 10 -262144
--1 -1 12700 1;
+-1 -1 0 1;
 #X obj 221 371 r \$0-wet;
 #X obj 89 451 *~ 1;
 #X obj 149 481 *~ 0;
@@ -48,10 +42,27 @@
 #X obj 196 452 + 1;
 #X floatatom 196 548 5 0 0 0 - - -, f 5;
 #X floatatom 76 553 5 0 0 0 - - -, f 5;
+#X text 290 155 <-- Escreve nas delay lines;
+#X text 678 136 <-- Velocidade (ex.: 0.7);
+#X text 694 264 <-- Profundidade (ex.: 2.4);
+#X text 710 356 <-- Feedback (ex.: -0.3);
+#X text 486 335 <-- Lê da delay line 2;
+#X text 480 399 <-- Lê da delay line 1;
+#X text 388 34 Inlet da direita com par (f \, a) não foi usado.;
+#X obj 549 220 loadbang;
+#X msg 549 242 2.4;
+#X obj 648 308 loadbang;
+#X msg 648 330 -0.3;
+#X obj 552 485 cnv 15 375 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 555 487 Esse patch recebe um sinal no inlet da esquerda e um
+par (frequência \, amplitude) no inlet da direita. Com os ajustes
+de frequência e dry/wet escolhidos pelo usuário \, ele aplica o efeito
+Phaser no sinal e devolve ele pelo outlet.;
 #X connect 0 0 8 0;
-#X connect 0 0 24 0;
+#X connect 0 0 21 0;
 #X connect 1 0 2 0;
-#X connect 2 0 21 0;
+#X connect 2 0 18 0;
 #X connect 3 0 4 0;
 #X connect 4 0 6 0;
 #X connect 6 0 13 0;
@@ -66,26 +77,30 @@
 #X connect 12 0 3 1;
 #X connect 12 0 2 1;
 #X connect 12 0 4 1;
-#X connect 12 0 25 0;
+#X connect 12 0 22 0;
 #X connect 13 0 5 0;
-#X connect 14 0 22 0;
-#X connect 16 0 37 0;
+#X connect 14 0 19 0;
+#X connect 16 0 31 0;
 #X connect 17 0 14 1;
 #X connect 17 0 13 1;
-#X connect 17 0 26 0;
-#X connect 21 0 14 0;
-#X connect 21 0 15 0;
-#X connect 31 0 5 0;
-#X connect 31 0 22 0;
-#X connect 31 0 38 0;
-#X connect 33 0 0 0;
-#X connect 36 0 37 1;
-#X connect 36 0 40 0;
-#X connect 36 0 43 0;
-#X connect 37 0 39 0;
-#X connect 38 0 39 1;
-#X connect 39 0 30 0;
-#X connect 40 0 41 0;
-#X connect 41 0 38 1;
-#X connect 41 0 42 0;
+#X connect 17 0 23 0;
+#X connect 18 0 14 0;
+#X connect 18 0 15 0;
+#X connect 25 0 5 0;
+#X connect 25 0 19 0;
+#X connect 25 0 32 0;
+#X connect 27 0 0 0;
+#X connect 30 0 31 1;
+#X connect 30 0 34 0;
+#X connect 30 0 37 0;
+#X connect 31 0 33 0;
+#X connect 32 0 33 1;
+#X connect 33 0 24 0;
+#X connect 34 0 35 0;
+#X connect 35 0 32 1;
+#X connect 35 0 36 0;
+#X connect 45 0 46 0;
+#X connect 46 0 12 0;
+#X connect 47 0 48 0;
+#X connect 48 0 17 0;
 #X coords 0 -1 1 1 250 100 1 10 10;
