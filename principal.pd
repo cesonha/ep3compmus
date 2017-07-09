@@ -2,10 +2,12 @@
 #X obj 260 1300 Tocador;
 #X obj 30 138 Sintetizadores;
 #X obj 30 12 Entrada;
-#X obj 56 575 Envelopes;
+#X obj 30 579 Envelopes;
 #X obj 85 795 Efeitos;
-#X text 131 578 para usar: mudar slider Sustain do ADSR para 1 porque
+#X text 460 529 para usar: mudar slider Sustain do ADSR para 1 porque
 isso impede de sair o som se todos sliders estiverem no zero;
+#X text 682 27 Cesar Cano de Oliveira NUSP: 8.53617e+006 Fabio Muller
+NUSP: 8.53613e+006;
 #X connect 1 0 3 0;
 #X connect 1 1 3 1;
 #X connect 1 2 3 2;
